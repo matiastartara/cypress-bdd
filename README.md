@@ -10,6 +10,7 @@ This repository contains a test automation framework built using **Cypress**, **
 * [⚙️ Installation & Setup](#️-installation--setup)
 * [💻 Running Tests Locally](#-running-tests-locally)
 * [🐳 Running Tests in Docker](#-running-tests-in-docker)
+* [🤖 GitHub Actions CI/CD](#-github-actions-cicd)
 * [📝 Best Practices](#-best-practices)
 
 ---
@@ -111,6 +112,17 @@ Run the container:
 ```bash
 docker run -it --rm cypress-bdd-tests
 ```
+
+---
+
+## 🤖 GitHub Actions CI/CD
+This project includes a GitHub Actions workflow configured under `.github/workflows/cypress.yml` to automatically build, run, and upload test assets (screenshots & videos) on every push and pull request to the `main` and `develop` branches.
+
+### Configured Secrets 🔑
+Since the local `.env` file is ignored and not committed to Git, you must define the following secrets in your GitHub Repository settings (**Settings > Secrets and variables > Actions**):
+
+1. **`USER_NAME`**: The test runner username.
+2. **`USER_PASSWORD`**: The test runner password.
 
 ---
 
