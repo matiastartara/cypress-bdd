@@ -30,8 +30,6 @@ The project follows the Page Object Model (POM) pattern combined with Cucumber S
 │   ├── e2e/
 │   │   └── features/
 │   │       └── login.feature         # Gherkin scenario definitions
-│   ├── fixtures/
-│   │   └── example.json              # Static test data
 │   ├── pages/
 │   │   └── LoginPage.ts              # Page Object class (selectors & actions)
 │   ├── support/
