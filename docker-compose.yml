@@ -1,0 +1,12 @@
+services:
+  cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # Prevent Cypress from opening browser UI in Docker
+      - CYPRESS_TAKE_SCREENSHOTS=true
+    volumes:
+      # Mount cypress folders to retrieve screenshots, videos, and reports
+      - ./cypress/screenshots:/app/cypress/screenshots
+      - ./cypress/videos:/app/cypress/videos

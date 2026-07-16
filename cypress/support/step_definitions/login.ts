@@ -10,8 +10,10 @@ import {
     cy.visit("/");
   });
   
-  When("A user enters the username {string}, the password {string}, and clicks on the login button", (username,password) => {
-    loginPage.submitLogin(username,password)
+  When("A user enters the username from env {string}, the password from env {string}, and clicks on the login button", (userKey: string, passwordKey: string) => {
+    const username = Cypress.env(userKey);
+    const password = Cypress.env(passwordKey);
+    loginPage.submitLogin(username, password);
   });
   
   Then("the url will contains the inventory subdirectory", () => {
